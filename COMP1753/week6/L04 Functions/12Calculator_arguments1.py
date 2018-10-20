@@ -1,0 +1,41 @@
+def input_and_convert(prompt, conversion_fn):
+    string = input(prompt)
+    number = conversion_fn(string)
+    return number
+
+
+def calculate(number1, number2, number3, operation):
+    if operation == "+":
+        combination = number1 + number2 + number3
+        return combination
+    elif operation == "-":
+        combination = number1 - number2 - number3
+        if combination < 0 :
+            print("result will be negatif ")
+            return combination
+        else:
+            return combination 
+    else:
+        print("the calcule you choose is not avaible or what you intered was incorrect")
+
+
+def output(parameter1, parameter2):
+    parameter1_str = str(parameter1)
+    parameter2_str = str(parameter2)
+    print(parameter1_str + parameter2_str)
+
+
+number1 = input_and_convert(" First number: ", int)
+
+number2 = input_and_convert("Second number: ", int)
+
+number3 = input_and_convert(" Third number: ", int)
+
+operation = input_and_convert("Operation [+, -]: ", str)
+
+combination = calculate(number1, number2, number3, operation)
+
+output("Answer: ", combination)
+
+print()
+input("Press return to continue ...")
