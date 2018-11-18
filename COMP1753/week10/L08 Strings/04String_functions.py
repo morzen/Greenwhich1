@@ -1,0 +1,16 @@
+string = "  Hello world!   "
+print("string = '" + string + "'")
+print()
+print("SOME FUNCTIONS USED ON STRINGS")
+print("len(string) = " + str(len(string)))
+print("max(string) = " + str(max(string)))
+print("min(string) = " + str(min(string)))
+print()
+print("SOME COMBINATIONS")
+print("len(string.strip())    = " + str(len(string.strip())))
+print("max(string.swapcase()) = " + str(max(string.swapcase())))
+print("max(string.title())    = " + str(max(string.title())))
+print()
+
+print()
+input("Press return to continue ...")

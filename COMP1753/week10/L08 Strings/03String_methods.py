@@ -1,0 +1,23 @@
+string = "  Hello world!   "
+print("string = '" + string + "'")
+print()
+print("SOME STRING FUNCTIONS")
+print("string.lower(): '" + string.lower() + "'")
+print("string.upper(): '" + string.upper() + "'")
+print("string.title(): '" + string.title() + "'")
+print("string.swapcase(): '" + string.swapcase() + "'")
+print()
+print("string.strip(): '" + string.strip() + "'")
+print("string.lstrip(): '" + string.lstrip() + "'")
+print("string.rstrip(): '" + string.rstrip() + "'")
+print()
+print("string.center(30): '" + string.center(30) + "'")
+print("string.ljust(30) : '" + string.ljust(30) + "'")
+print("string.rjust(30) : '" + string.rjust(30) + "'")
+print()
+print("string.replace(\"world\", \"COMP1753\"): '"
+ + string.replace("world", "COMP1753") + "'")
+print()
+
+print()
+input("Press return to continue ...")
