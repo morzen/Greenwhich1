@@ -1,5 +1,9 @@
 from string import punctuation
 from string import whitespace
+import os
+from tkinter import filedialog
+from tkinter import*
+
 
 
 Words = []
@@ -38,7 +42,7 @@ def frequency(items):
 def listing():
     i = 0
     j = 0
-    print(Words)
+    #print(Words)
     while True:
 
         try:
@@ -56,13 +60,13 @@ def listing():
         except IndexError:
             break
 
-    try :
-        Words.remove('')
-    except ValueError:
-        print(Words)
+    #try :
+        #Words.remove('')
+    #except ValueError:
+        #print(Words)
     count = frequency(Words)
-    for key in count:
-        print(str(count.get(key)) + " " + key)
+    #for key in count:
+        #print(str(count.get(key)) + " " + key)
     word = len(Words)
     print("number of word")
     print(word)
@@ -71,8 +75,19 @@ def listing():
 
 
 
-while True :
-    sentence = str(input("enter a sentence please: ")) + " "
+#namefile = input("please enter the name of the file you which to use: ")
+#filename = os.path.abspath("L09Files/" + namefile)
+
+filename = filedialog.askopenfilename(initialdir = "/" ,title ="Select file",filetypes = (('text files', 'txt'),))
+
+file = open(filename)
+file = file.read()
+Words.append(file)
+
+end = False
+
+while not end :
+    sentence = str(file) + " "
 
 
     if sentence == " ":
@@ -83,12 +98,14 @@ while True :
         sentence2 = space(sentence)
         letter_count = str(len(sentence2))
         Words = list(sentence)
-        print("number of character: " + character_count)
-        print("number of letter: " + letter_count)
+        #print("number of character: " + character_count)
+        #print("number of letter: " + letter_count)
         listing()
 
+    stop = input("if you want to stop press enter: ")
+    if stop == "":
+        end
 
-
-
+#exit()
 print()
 input("Press return to continue ...")
