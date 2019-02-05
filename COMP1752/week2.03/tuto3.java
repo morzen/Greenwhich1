@@ -94,13 +94,13 @@ private void view() {
 
          course.setToolTipText("different courses");
          course.setFont(fnt);
-         course.add(makeMenuItem("COMP1752", "NewFrame", "andy wicks", fnt));
+         course.add(makeMenuItem("COMP1752", "java", "andy wicks", fnt));
          course.addSeparator();
-         course.add(makeMenuItem("COMP1771", "NewFrame", "peter smith", fnt));
+         course.add(makeMenuItem("COMP1771", "SmartSystem", "peter smith", fnt));
          course.addSeparator();
-         course.add(makeMenuItem("COMP1713", "NewFrame", "simon scola", fnt));
+         course.add(makeMenuItem("COMP1713", "database", "simon scola", fnt));
          course.addSeparator();
-         course.add(makeMenuItem("MATH1111", "", "yvonne fryer", fnt));
+         course.add(makeMenuItem("MATH1111", "math", "yvonne fryer", fnt));
          menuBar.add(course);
 
 
@@ -159,6 +159,22 @@ private void view() {
          if ("NewPage".equals(ae.getActionCommand())) {
 
          }
+
+         if ("java".equals(ae.getActionCommand())) {
+             txtShowText.setText("praise andy");
+         }
+
+         if ("SmartSystem".equals(ae.getActionCommand())) {
+             txtShowText.setText("peter is great ");
+         }
+
+         if ("database".equals(ae.getActionCommand())) {
+             txtShowText.setText("haven't learn anything so far");
+         }
+
+         if ("math".equals(ae.getActionCommand())) {
+             txtShowText.setText("sleeping ");
+         }
    }
 
       @Override
@@ -175,6 +191,9 @@ private void view() {
      public void keyReleased(KeyEvent e){
        throw new UnsupportedOperationException("not supported yet.");
       }
+
+
+
      //
       // @Override
       // public void model(){
