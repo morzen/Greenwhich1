@@ -260,12 +260,12 @@ return mnuItem;
 
       @Override
       public void actionPerformed(ActionEvent ae) {
-          // if ("NewNote".equals(ae.getActionCommand())) {
-          //     txtShowText.setText("this is a note");
-          // }
-          // if ("Close".equals(ae.getActionCommand())) {
-          //     txtShowText.setText("");
-          // }
+          if ("NewNote".equals(ae.getActionCommand())) {
+
+          }
+          if ("Close".equals(ae.getActionCommand())) {
+              
+          }
           if ("Exit".equals(ae.getActionCommand())) {
               System.exit(0);
           }
