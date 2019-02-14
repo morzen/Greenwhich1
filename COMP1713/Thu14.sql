@@ -73,3 +73,66 @@ SELECT * FROM team WHERE leagueID = 2;
 
 SELECT Name FROM team WHERE leagueID = 2;
 SELECT FirstName FROM Player WHERE 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+INSERT INTO League VALUES ('League One');
+INSERT INTO League VALUES ('World Cup A');
+INSERT INTO League VALUES ('World Cup B');
+
+
+
+INSERT INTO Team VALUES ('Liverpool',1);
+INSERT INTO Team VALUES ('Arsenal',1);
+INSERT INTO Team VALUES ('BarneyDaBest',1);
+INSERT INTO Team VALUES ('BrandonLoser',1);
+INSERT INTO Team VALUES ('RealBoitar',1);
+INSERT INTO Team VALUES ('BouftonRouge',1);
+INSERT INTO Team VALUES ('TofuLegs',1);
+
+SELECT * FROM Team
+
+INSERT INTO Player (FirstName,LastName) VALUES ('Ryan','Renold');
+INSERT INTO Player (FirstName,LastName) VALUES ('Hugh','Jackman');
+INSERT INTO Player (FirstName,LastName) VALUES ('Tom','Cruise');
+
+INSERT INTO Team (Name,LeagueID) VALUES ('Liverpool',1);
+
+
+INSERT INTO result VALUES (1,2,4,0,3,0,1);
+
+SELECT * FROM Result;
+
+SELECT * FROM Team WHERE leagueID = 1;
+SELECT * FROM Team WHERE leagueID = 2;
+
+SELECT Name FROM Team WHERE leagueID = 2;
+SELECT FirstName FROM Player	 ;
+
+SELECT * FROM League;
+SELECT * FROM Team;
+SELECT * FROM Result;
+SELECT * FROM Player;
+
+SELECT Name FROM team WHERE leagueID = 2;
+
+SELECT FirstName+' '+LastName FROM Player;
+ALTER TABLE Player WHERE ('(No column name)') 
