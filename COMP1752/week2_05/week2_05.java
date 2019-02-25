@@ -39,16 +39,14 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JToolBar;
 import javax.swing.JTextField;
-//import AllNotes.*;
 import java.text.SimpleDateFormat;
 
-
+import week2_05.*;
 
 /**
 *
 * @author bm4904f
 */
-
 
 
 public class week2_05 extends JFrame implements ActionListener, KeyListener {
@@ -64,7 +62,8 @@ public class week2_05 extends JFrame implements ActionListener, KeyListener {
 
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         week2_05 prg = new week2_05();
 
 
@@ -79,7 +78,8 @@ public class week2_05 extends JFrame implements ActionListener, KeyListener {
 
     }
 
-    public week2_05() {
+    public week2_05()
+    {
         model();
         view();
         controller();
@@ -88,21 +88,27 @@ public class week2_05 extends JFrame implements ActionListener, KeyListener {
 
 
     @Override
-    public void actionPerformed(ActionEvent ae) {
+    public void actionPerformed(ActionEvent ae)
+    {
         // if ("NewNote".equals(ae.getActionCommand())) {
         //     txtShowText.setText("this is a note");
         // }
         // if ("Close".equals(ae.getActionCommand())) {
         //     txtShowText.setText("");
         // }
-        if ("Course".equals(ae.getActionCommand())) {
+        if ("Course".equals(ae.getActionCommand()))
+        {
             crse = courseList.getSelectedItem().toString();
             System.out.println(crse);
         }
-        if ("Exit".equals(ae.getActionCommand())) {
+
+        if ("Exit".equals(ae.getActionCommand()))
+        {
             System.exit(0);
         }
-        if ("NewPage".equals(ae.getActionCommand())) {
+
+        if ("NewPage".equals(ae.getActionCommand()))
+        {
 
         }
         //
@@ -124,17 +130,20 @@ public class week2_05 extends JFrame implements ActionListener, KeyListener {
     }
 
     @Override
-    public void keyTyped(KeyEvent e){
+    public void keyTyped(KeyEvent e)
+    {
         throw new UnsupportedOperationException("not supported yet.");
     }
     //
     @Override
-    public void keyPressed(KeyEvent e){
+    public void keyPressed(KeyEvent e)
+    {
         throw new UnsupportedOperationException("not supported yet.");
     }
     //
     @Override
-    public void keyReleased(KeyEvent e){
+    public void keyReleased(KeyEvent e)
+    {
         throw new UnsupportedOperationException("not supported yet.");
     }
 
@@ -157,7 +166,8 @@ public class week2_05 extends JFrame implements ActionListener, KeyListener {
 
 
 
-    private void model() {
+    private void model()
+    {
         course.add("COMP1752");
         course.add("COMP1753");
         crse = course.get(0);
@@ -180,7 +190,8 @@ public class week2_05 extends JFrame implements ActionListener, KeyListener {
 
 
 
-    private void view() {
+    private void view()
+    {
         Font fnt = new Font("Georgia", Font.PLAIN, 24);
 
         JMenuBar menuBar = new JMenuBar();
@@ -200,7 +211,8 @@ public class week2_05 extends JFrame implements ActionListener, KeyListener {
 
 
         // This will add each course to the combobox
-        for (String crse : course) {
+        for (String crse : course)
+        {
             courseList.addItem(crse);
         }
         courseList.setFont(fnt);
@@ -283,7 +295,8 @@ public class week2_05 extends JFrame implements ActionListener, KeyListener {
 
 
 
-    private void controller() {
+    private void controller()
+    {
         addAllNotes();
     }
 
@@ -293,7 +306,8 @@ public class week2_05 extends JFrame implements ActionListener, KeyListener {
     String txt,
     String actionCommand,
     String toolTipText,
-    Font fnt) {
+    Font fnt)
+    {
         JMenuItem mnuItem = new JMenuItem();
         mnuItem.setText(txt);
         mnuItem.setActionCommand(actionCommand);
@@ -311,7 +325,8 @@ public class week2_05 extends JFrame implements ActionListener, KeyListener {
     String imageName,
     String actionCommand,
     String toolTipText,
-    String altText) {
+    String altText)
+    {
 
         //Create and initialize the button.
         JButton button = new JButton();
@@ -328,7 +343,8 @@ public class week2_05 extends JFrame implements ActionListener, KeyListener {
         + ".png";
 
         File fyle = new File(imgLocation);
-        if (fyle.exists() && !fyle.isDirectory()) {
+        if (fyle.exists() && !fyle.isDirectory())
+        {
             // image found
             Icon img;
             img = new ImageIcon(imgLocation);
@@ -343,23 +359,26 @@ public class week2_05 extends JFrame implements ActionListener, KeyListener {
 
 
 
-    private void addNote(String text) {
+    private void addNote(String text)
+    {
         note.add(txtNewNote.getText());
         addAllNotes();
     }
 
-    private void addAllNotes() {
-        String txtNotes = "";
-        for (Note n : allNotes.allNotes) {
-            txtNotes += n.note + "\n";
-        }
-        txtDisplayNotes.setText(txtNotes);
-    }
-
-    private void addAllNotes() {
+    // private void addAllNotes() {
+    //     String txtNotes = "";
+    //     for (Note n : allNotes.allNotes) {
+    //         txtNotes += n.note + "\n";
+    //     }
+    //     txtDisplayNotes.setText(txtNotes);
+    // }
+    //
+    private void addAllNotes()
+    {
         String allNotes = "";
 
-        for(String n: note) {
+        for(String n: note)
+        {
             allNotes += n + "\n";
         }
 
@@ -368,7 +387,8 @@ public class week2_05 extends JFrame implements ActionListener, KeyListener {
 
 
 
-    private String getDateAndTime() {
+    private String getDateAndTime()
+    {
         String UK_DATE_FORMAT_NOW = "dd-MM-YYYY HH:mm:ss";
         String ukDateAndTime;
         Calendar cal = Calendar.getInstance();
@@ -379,7 +399,15 @@ public class week2_05 extends JFrame implements ActionListener, KeyListener {
     }
 
 
-
+    private void addAllNotes()
+    {
+        String txtNotes = "";
+        for (Note n : allNotes.allNotes) // ask wtf .allNotes
+        {
+            txtNotes += n.note + "\n";
+        }
+        txtDisplayNotes.setText(txtNotes);
+    }
 
 
 
