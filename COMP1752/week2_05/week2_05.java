@@ -51,6 +51,7 @@ import week2_05.*;
 
 public class week2_05 extends JFrame implements ActionListener, KeyListener {
 
+    CommonCode cc = new CommonCode();
     JPanel pnl = new JPanel(new BorderLayout());
     JTextArea txtNewNote = new JTextArea();
     JTextArea txtDisplayNotes = new JTextArea();
@@ -169,20 +170,22 @@ public class week2_05 extends JFrame implements ActionListener, KeyListener {
     private void model()
     {
         course.add("COMP1752");
-        course.add("COMP1753");
+        course.add("MATH1111");
+        course.add("COMP1771");
+        course.add("COMP1713")
         crse = course.get(0);
         Note nt = new Note();
-        nt.noteID = 1;
-        nt.dayte = getDateAndTime();
-        nt.course = crse;
-        nt.note = "Arrays are of fixed length and are inflexible.";
-        allNotes.allNotes.add(nt);
+        nt.setNoteID(1);
+        nt.setDayte(cc.ukDateAndTime);
+        nt.setCourse(crse);
+        nt.setNote("Arrays are of fixed length and are inflexible.");
+        allNotes.addNote(nt);
         nt = new Note();
-        nt.noteID = 2;
-        nt.dayte = getDateAndTime();
-        nt.course = crse;
-        nt.note = "ArraysList can be added to and items can be deleted.";
-        allNotes.allNotes.add(nt);
+        nt.setNoteID(2);
+        nt.setDayte(cc.ukDateAndTime);
+        nt.setCourse(crse);
+        nt.setNote("ArraysList can be added to and items can be deleted.");
+        allNotes.addNote(nt);
     }
 
 
@@ -365,26 +368,13 @@ public class week2_05 extends JFrame implements ActionListener, KeyListener {
         addAllNotes();
     }
 
-    // private void addAllNotes() {
-    //     String txtNotes = "";
-    //     for (Note n : allNotes.allNotes) {
-    //         txtNotes += n.note + "\n";
-    //     }
-    //     txtDisplayNotes.setText(txtNotes);
-    // }
-    //
-    private void addAllNotes()
-    {
-        String allNotes = "";
-
-        for(String n: note)
-        {
-            allNotes += n + "\n";
+    private void addAllNotes() {
+        String txtNotes = "";
+        for (Note n : allNotes.allNotes) {
+            txtNotes += n.note + "\n";
         }
-
-        txtDisplayNotes.setText(allNotes);
+        txtDisplayNotes.setText(txtNotes);
     }
-
 
 
     private String getDateAndTime()
@@ -399,15 +389,6 @@ public class week2_05 extends JFrame implements ActionListener, KeyListener {
     }
 
 
-    private void addAllNotes()
-    {
-        String txtNotes = "";
-        for (Note n : allNotes.allNotes) // ask wtf .allNotes
-        {
-            txtNotes += n.note + "\n";
-        }
-        txtDisplayNotes.setText(txtNotes);
-    }
 
 
 

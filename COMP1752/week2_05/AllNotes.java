@@ -57,8 +57,7 @@ import java.util.ArrayList;
 
 public class AllNotes {
 
-    //private ArrayList<Note> allNotes = new ArrayList<>();
-    //public int max = 0;
+    private ArrayList<Note> allNotes = new ArrayList<>();
     private CommonCode cc = new CommonCode();
     private String crse = "";
 
@@ -79,25 +78,25 @@ public class AllNotes {
     //     System.out.println("readAllNotes has not been coded yet.");
     // }
 
-    // public void addNote(String text)
-    // {
-    //     Note myNote = new Note();
-    //     myNote.setCourse(crse);
-    //     myNote.setDayte(cc.ukDateAndTime);
-    //     myNote.setNote(text);
-    //     allNotes.add(myNote);
-    // }
+    public void addNote(String text)
+    {
+        Note myNote = new Note();
+        myNote.setCourse(crse);
+        myNote.setDayte(cc.ukDateAndTime);
+        myNote.setNote(text);
+        allNotes.add(myNote);
+    }
     //
-    // public void addNote(Note nt)
-    // {
-    //     allNotes.add(nt);
+    public void addNote(Note nt)
+    {
+        allNotes.add(nt);
+
+        // Note that the call to the method addAllNotes() has gone.
+        // This will now appear in the main program.
+    }
     //
-    //     // Note that the call to the method addAllNotes() has gone.
-    //     // This will now appear in the main program.
-    // }
-    //
-    // public ArrayList<Note> getAllNotes()
-    // {
-    //     return allNotes;
-    // }
+    public ArrayList<Note> getAllNotes()
+    {
+        return allNotes;
+    }
 }
