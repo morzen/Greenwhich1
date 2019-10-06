@@ -82,7 +82,7 @@ public class Coursework extends JFrame implements ActionListener, KeyListener {
     String total = "0";
     String remove = " ";  
     String crse = " ";
-    String ENotes = " ";
+    String notes = " ";
     StringBuffer inputBuffer = new StringBuffer();
 
     AllNotes allNotes = new AllNotes();
@@ -145,6 +145,7 @@ public class Coursework extends JFrame implements ActionListener, KeyListener {
         try {
      
      FileReader fr = new FileReader ("Courses.txt");
+     //FileReader fr2 = new FileReader ("Notes.txt");
      BufferedReader br = new BufferedReader(fr);
      String crse;
      while ((crse = br.readLine()) != null) {
@@ -297,7 +298,7 @@ duplicatec();
                
                
                add(toolBar, BorderLayout.NORTH);
-       JPanel pnlWest = new JPanel();
+               JPanel pnlWest = new JPanel();
                pnlWest.setLayout(new BoxLayout(pnlWest, BoxLayout.Y_AXIS));
                pnlWest.setBorder(BorderFactory.createLineBorder(Color.black));
 
@@ -332,7 +333,7 @@ duplicatec();
                add(cen, BorderLayout.CENTER);
 
                setExtendedState(JFrame.MAXIMIZED_BOTH);
-               setTitle("Coursework - Daniels Magonis");
+               setTitle("Coursework - Barnabe Malandain");
                setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
                setVisible(true);  // Needed to ensure that the items can be seen.
@@ -399,31 +400,31 @@ duplicatec();
 //        addAllNotes();
 //                }
 
-    private void addNote(String text) {
-        allNotes.addNote(allNotes.getMaxID(), crse, text);
-        addAllNotes();
-
-    
-    try {
+    private void addnote() {
+       try {
         DateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
         Date dateobj = new Date();
         Calendar calobj = Calendar.getInstance();
         System.out.println(df.format(calobj.getTime()));
         String datez = df.format(calobj.getTime());
-         FileWriter fw = new FileWriter("Notes.txt", true);
+        
+        
+        
+        FileWriter fw = new FileWriter("Notes.txt", true);
+         
+         System.out.println("code was here");
+         
          PrintWriter pw = new PrintWriter(fw);
          String notes = " ";
-         id += i;
-         Note nt = new Note(id, crse,txtNewNote.getText());
-        // Note notes = new Note();
-//        nt.setNoteID(id);
-//        nt.setDayte(getDateAndTime());
-//        nt.setCourse(crse);
-//        nt.setNote(txtNewNote.getText());
-//        allNotes.addNote(nt.getNoteID(), nt.getCourse(), nt.getNote());
-//        notes = txtNewNote.getText();
+         Note nt = new Note();
+        nt.setNoteID(allNotes.getMaxID());
+        nt.setDayte(datez);
+        nt.setCourse(crse);
+        nt.setNote(txtNewNote.getText());
+        allNotes.addNote(allNotes.getMaxID(), crse, nt.getNote());
+        notes = txtNewNote.getText();
         txtNewNote.setText(" ");
-        txtDisplayNotes.setText(id + "  " +crse + "   " + notes);
+        addAllNotes();
         fw.close();
         pw.close();
         
@@ -616,7 +617,7 @@ private void duplicatec() {
         try {
       
             BufferedReader reader = new BufferedReader(new FileReader(outfile));
-        BufferedWriter writer = new BufferedWriter(new FileWriter(infile));
+            BufferedWriter writer = new BufferedWriter(new FileWriter(infile));
             String currentReadingLine = reader.readLine();
             
             while (currentReadingLine != null) {
@@ -630,7 +631,7 @@ private void duplicatec() {
             
             writer.write(modifiedFileContent);
               
-            courseList.removeItem(item);
+              courseList.removeItem(item);
               courseList.addItem(rename);
               courseList.setSelectedItem(rename);
              
@@ -693,7 +694,7 @@ crse = courseList.getSelectedItem().toString();
 System.out.println(crse);
 }
  if ("NewNote".equals(ae.getActionCommand())){ 
- //addnote();
+ addnote();
  duplicaten();
 
  }

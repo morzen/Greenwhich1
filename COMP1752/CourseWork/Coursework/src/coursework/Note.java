@@ -11,9 +11,9 @@ public class Note extends CommonCode {
     private String dayte = "";
     private String note = "";
 
-//    public Note() {
-//
-//    }
+    public Note() {
+
+    }
     public Note(int nid, String crs, String dt, String nt) {
         setNoteID(nid);
         setCourse(crs);
@@ -28,9 +28,7 @@ public class Note extends CommonCode {
         setNote(nt);
     }
 
-    Note() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
     
 

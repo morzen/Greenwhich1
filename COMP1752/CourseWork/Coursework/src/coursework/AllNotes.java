@@ -1,7 +1,7 @@
 package coursework;
 
+//import coursework.Note.*;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -11,13 +11,10 @@ import java.text.SimpleDateFormat;
 /**
  *
  * @author bm4904f
- */
+ **/
 public class AllNotes extends CommonCode {
 
-    private static int size() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
+    
     private ArrayList<Note> allNotes = new ArrayList<>();
     private CommonCode cc = new CommonCode();
     private String crse = "";
@@ -64,6 +61,7 @@ public class AllNotes extends CommonCode {
 //        allNotes.add(myNote);
 //        writeAllNotes();
 // }
+    
     public void addNote(int maxID, String course, String note) {
         Note myNote = new Note(maxID, course, note);
         allNotes.add(myNote);
@@ -73,10 +71,11 @@ public class AllNotes extends CommonCode {
     //int i = 0;
     public String searchAllNotesByKeyword(String noteList, String s) {
         int i = 0;
-        while (i < AllNotes.size ()) {
+        while (i < allNotes.size()) {
             if (allNotes.get(i).getNote().contains(s)) {
                 noteList += allNotes.get(i).getNote() + "\n";
             }
+            i++;
         }
         return noteList;
     }
@@ -114,23 +113,10 @@ public class AllNotes extends CommonCode {
         }
     }
 
-//    int getMaxID() {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
-//    private void writeTextFile(String path, ArrayList<String> writeNote) {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
-//}
-//    
-//    public ArrayList<Note> getAllNotes() {
-//        return allNotes;
-//    }
-//
-//    void addNote(int noteID, String course, String note) {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
-//
-//    private void writeAllNotes() {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
+   
+
+    
+    /*public ArrayList<Note> getAllNotes(){
+    return allNotes;
+    }*/
 }

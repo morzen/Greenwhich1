@@ -91,7 +91,7 @@ public class CommonCode {
             String toolTipText,
             String altText) {
         //Look for the image.
-        String imgLocation = System.getProperty("user.dir") + "\\icons\\"
+        String imgLocation = System.getProperty("user.dir") + "//icons//"
                 + imageName
                 + ".png";
         //Create and initialize the button.
@@ -152,18 +152,7 @@ public class CommonCode {
         return file;
     }
 
-    // This writes to a text file using an ArrayList of Strings. The path to the
-    // file has to be added. Use appDir if the files are in the application
-    // directory. Use fileSeperator if the app may be running under a
-    // different OS.
-    /**
-     * Change the contents of text file in its entirety, overwriting any
-     * existing text.
-     *
-     * @param fn
-     * @param aContents
-     * @throws java.io.FileNotFoundException
-     */
+   
     public void writeTextFile(String fn, ArrayList<String> outputText)
             throws FileNotFoundException, IOException {
         File fileName = new File(fn);
@@ -180,6 +169,8 @@ public class CommonCode {
             output.close();
         }
     }
+
+    
 }
 
 // This is used by CommonCode to set up the public variables
@@ -665,5 +656,6 @@ public class CommonCode {
 //        }
 //
 //        return button;
+//    }
 //    }
 //}
